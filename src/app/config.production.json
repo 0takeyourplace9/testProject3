@@ -9,5 +9,5 @@
   "streamingAssetsUrl": "StreamingAssets",
   "dataUrl": "example/Build.data.gz",
   "frameworkUrl": "example/Build.framework.js.gz",
-  "codeUrl": "example/Build1.wasm.gz"
+  "codeUrl": "example/Build.wasm.gz"
 }
