@@ -1,12 +1,11 @@
 {
-  "companyName": "Keittech",
-  "productName": "Poffi",
-  "productVersion": "0.01",
+  "companyName": "DefaultCompany",
+  "productName": "Space Inviders",
+  "productVersion": "0.1",
   "width": 960,
   "height": 600,
   "backgroundColor": "#000000",
   "decompressionFallback": "",
-  "streamingAssetsUrl": "StreamingAssets",
   "dataUrl": "example/Build.data.gz",
   "frameworkUrl": "example/Build.framework.js.gz",
   "codeUrl": "example/Build.wasm.gz"
