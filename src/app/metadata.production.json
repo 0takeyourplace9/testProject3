@@ -1,0 +1,33 @@
+{
+  "title": "Poffi",
+  "description": "Poffi by Keittech",
+  "creator": "Keittech",
+  "applicationName": "Poffi",
+  "themeColor": [
+    { "media": "(prefers-color-scheme: dark)", "color": "#000000" },
+    { "media": "(prefers-color-scheme: light)", "color": "#ffffff" }
+  ],
+  "viewport": {
+    "width": 960,
+    "height": 600
+  },
+  "other": {
+    "productVersion": "0.01",
+    "splashScreenStyle": "Dark",
+    "unityVersion": "2022.3.5f1",
+    "developmentPlayer": "false",
+    "decompressionFallback": "",
+    "useWasm": "true",
+    "useThreads": "false",
+    "useWebGl10": "false",
+    "useWebGl20": "true",
+    "useDataCaching": "true",
+    "loaderFilename": "web2.loader.js",
+    "dataFilename": "web2.data",
+    "frameworkFilename": "web2.framework.js",
+    "codeFilename": "web2.wasm",
+    "memoryFilename": "",
+    "symbolsFilename": "",
+    "backgroundFilename": ""
+  }
+}

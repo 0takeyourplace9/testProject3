@@ -1,0 +1,37 @@
+{
+  "name": "stripe-payment-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "postinstall": "mkdir -p data && node ./scripts/create_db.js",
+    "build": "next build",
+    "copy:next2unity": "rm -rf ../Assets/WebGLTemplates/Next && mv out ../Assets/WebGLTemplates/Next",
+    "copy:unity2next": "rm -rf public/example && cp -r ../../Space\\ Inviders/Build/Build public/example",
+    "start": "next start",
+    "serve:template": "npx serve ../Assets/WebGLTemplates/Next -p 8080",
+    "serve:build": "npx serve ../Build -p 8080",
+    "serve": "npm run serve:build",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@stripe/react-stripe-js": "2.1.2",
+    "@stripe/stripe-js": "2.1.1",
+    "@types/node": "20.4.8",
+    "@types/react": "18.2.18",
+    "@types/react-dom": "18.2.7",
+    "autoprefixer": "10.4.14",
+    "eslint": "8.46.0",
+    "eslint-config-next": "13.4.13",
+    "focus-lock": "0.11.6",
+    "next": "13.4.13",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sqlite3": "5.1.6",
+    "stripe": "13.4.0",
+    "tailwindcss": "3.3.3",
+    "tua-body-scroll-lock": "1.4.0",
+    "typescript": "5.1.6"
+  }
+}

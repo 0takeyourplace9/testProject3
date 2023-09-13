@@ -1,0 +1,13 @@
+{
+  "companyName": "Keittech",
+  "productName": "Poffi",
+  "productVersion": "0.01",
+  "width": 960,
+  "height": 600,
+  "backgroundColor": "#000000",
+  "decompressionFallback": "",
+  "streamingAssetsUrl": "StreamingAssets",
+  "dataUrl": "Build/web2.data",
+  "frameworkUrl": "Build/web2.framework.js",
+  "codeUrl": "Build/web2.wasm"
+}
