@@ -12,8 +12,8 @@ import metadataJSONProd from './metadata.production.json'
 import { APP_BASE } from './constants';
 import { VeriffContext } from './VeriffController';
 
-const metadataJSON = (process.env.NODE_ENV === 'development') ? metadataJSONDev : metadataJSONProd;
-const config = (process.env.NODE_ENV === 'development') ? configDev : configProd;
+const metadataJSON = (true) ? metadataJSONDev : metadataJSONProd;
+const config = (true) ? configDev : configProd;
 
 const Banner = (props: { message: string; type: string; }) => {
   const { type, message } = props;
