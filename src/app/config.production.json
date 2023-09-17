@@ -7,7 +7,7 @@
   "backgroundColor": "#000000",
   "decompressionFallback": "",
   "streamingAssetsUrl": "StreamingAssets",
-  "dataUrl": "example/Build.data.gz",
-  "frameworkUrl": "example/Build.framework.js.gz",
-  "codeUrl": "example/Build.wasm.gz"
+  "dataUrl": "Build/web2.data",
+  "frameworkUrl": "Build/web2.framework.js",
+  "codeUrl": "Build/web2.wasm"
 }
