@@ -9,11 +9,11 @@ import configDev from './config.json';
 import configProd from './config.production.json';
 import metadataJSONDev from './metadata.json'
 import metadataJSONProd from './metadata.production.json'
-import { APP_BASE } from './constants';
+import { APP_BASE, NEXT_STRIPE_LISTENER } from './constants';
 import { VeriffContext } from './VeriffController';
 
-const metadataJSON = (process.env.NODE_ENV === 'development') ? metadataJSONDev : metadataJSONProd;
-const config = (process.env.NODE_ENV === 'development') ? configDev : configProd;
+const metadataJSON = (false) ? metadataJSONDev : metadataJSONProd;
+const config = (false) ? configDev : configProd;
 
 const Banner = (props: { message: string; type: string; }) => {
   const { type, message } = props;
@@ -97,7 +97,7 @@ export const UnityAppController: FC<PaymentProps> = (props) => {
 
             switch (data.type) {
               case EventType.UNITY_PLAYER_AFTER_PAY: {
-                unityInstance.current?.SendMessage?.('player1(Clone)', 'OnMessage', event.data);
+                unityInstance.current?.SendMessage?.(NEXT_STRIPE_LISTENER, 'OnMessage', event.data);
                 return;
               }
               case EventType.UNITY_PLAYER_VERIFF: {
@@ -152,7 +152,7 @@ export const UnityAppController: FC<PaymentProps> = (props) => {
 
   return (
     <UnityAppContext.Provider value={unityInstance}>
-      <script src={`example/${metadata.other.loaderFilename}`} async={true}></script>
+      <script src={`${metadata.other.buildDirectory}/${metadata.other.loaderFilename}`} async={true}></script>
       <canvas id={`${config.productName}`} ref={ref} key={`${config.productName}`} width={config.width} height={config.height} style={{ backgroundColor: `${config.backgroundColor || '#ffffff'}` }}></canvas>
       {loading ? (
         <Loader />

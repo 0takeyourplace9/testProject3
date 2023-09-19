@@ -51,7 +51,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Implementation
 
-1. Create file `Assets/Plugins/Next.jslib` inside your Unity project containing:
+1. Put this project inside your WebGL application's root directory:
+
+```shell
+ln -s $PATH_TO_THIS_PROJECT Next
+```
+
+2. Create file `Assets/Plugins/Next.jslib` inside your Unity project containing:
 
 ```js
 mergeInto(LibraryManager.library, {
@@ -61,7 +67,7 @@ mergeInto(LibraryManager.library, {
 });
 ```
 
-2. Add following code to your class which will call and listen the Web app events:\
+3. Add following code to your class which will call and listen the Web app events:\
 
 ```cs
     // Send events to web app (see. Next.jslib file)
@@ -90,9 +96,8 @@ mergeInto(LibraryManager.library, {
     }
 ```
 
-3. Build Unity App and put it to the `public/{some path}/` folder of Next.js app
 4. Update paths to your build directory in `src/app/config.json` and `src/app/metadata.json` files. (you can change to .ts files when you will be ready to automate this process)
-5. Ensure that you have implemented the following routes in your Next.js app and API:
+5. Ensure that you have implemented the following routes:
 
 - `NEXT_STRIPE_CHECKOUT_FORM` - static page with POST form (used inside `popup`), which uses `price` and `hash` slug params (you can use search params instead) and have single button which allow user to confirm the payment and start the whole process.
   > See. `src/app/checkout/page.tsx` for example.
@@ -103,4 +108,31 @@ mergeInto(LibraryManager.library, {
 - `NEXT_STRIPE_CHECK_PAYMENT` - API route, which will be called from the Web app to check the payment status by `hash` param.
   > See. `src/app/api/check-payment/route.ts` for example.
 
-6. Add `UnityAppController` and `PaymentController` to your root page of NextJS/React app.
+6. Replace `next.config.js` with **static** one:
+
+```shell
+rm -f next.config.js && ln -s next.config.static.js next.config.js
+```
+
+7. Build the WebGL template for thew project `npm run build`
+8. Copy WebGL template into your project `npm run copy:next2unity`
+9. Build Unity App `[CMD]+[B]` or `[Ctrl]+[B]`
+
+- Open `Build settings -> WebGL -> Player Settings -> Resolution and Presentation`
+- Choose `Next` template
+- `Build`, name as `web2`
+
+10. (optional) Put contents of `web2/Build` folder in your project's root folder in to the `public/Build/` folder of Next.js app (`npm run copy:unity2next`)
+
+11. (optional) Replace `next.config.js` with **dynamic** one:
+
+```shell
+rm -f next.config.js && ln -s next.config.dynamic.js next.config.js
+```
+
+12. (optional) Run NextJS app.
+
+## Custom implementation into existing Next.JS app:
+
+Add `VeriffController`, `UnityAppController`, `PaymentController` and it's dependencies to your NextJS/React app. And place them as shown in `app.tsx` file.
+

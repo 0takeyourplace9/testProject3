@@ -22,6 +22,7 @@
     "useWebGl10": "false",
     "useWebGl20": "true",
     "useDataCaching": "true",
+    "buildDirectory": "example",
     "loaderFilename": "Build.loader.js",
     "dataFilename": "Build.data.gz",
     "frameworkFilename": "Build.framework.js.gz",

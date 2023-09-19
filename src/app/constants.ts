@@ -7,3 +7,4 @@ export const NEXT_STRIPE_CHECKOUT_FORM = process.env.NEXT_STRIPE_CHECKOUT_FORM |
 export const NEXT_STRIPE_CHECKOUT_SUCCESS = process.env.NEXT_STRIPE_CHECKOUT_SUCCESS || `${APP_BASE}/success`;
 export const NEXT_STRIPE_CHECKOUT_CANCELED = process.env.NEXT_STRIPE_CHECKOUT_CANCELED || `${APP_BASE}/canceled`;
 export const NEXT_STRIPE_CHECK_PAYMENT = process.env.NEXT_STRIPE_CHECK_PAYMENT || `${APP_BASE}/check-payment`;
+export const NEXT_STRIPE_LISTENER = process.env.NEXT_STRIPE_LISTENER || `StartUp`;

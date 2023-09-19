@@ -22,6 +22,7 @@
     "useWebGl10": "false",
     "useWebGl20": "true",
     "useDataCaching": "true",
+    "buildDirectory": "Build",
     "loaderFilename": "web2.loader.js",
     "dataFilename": "web2.data",
     "frameworkFilename": "web2.framework.js",
